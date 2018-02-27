@@ -3,12 +3,23 @@ import {render} from 'react-dom'
 
 import Example from '../../src'
 
+import IModal from '../../src/index'
+
 class Demo extends Component {
+  constructor() {
+    super()
+
+    this.state = {
+      open: false
+    }
+  }
+
   render() {
     return( 
       <div>
-        <h1>react-imodal Demo</h1>
+        <h1 onClick={() => this.setState({open: true})}>react-imodal Demo</h1>
         <Example/>
+        <IModal open={this.state.open} onClose={() => this.setState({open: false})}/>
       </div>
     )
   }
