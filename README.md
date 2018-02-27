@@ -1,5 +1,4 @@
 # react-imodal 💬
----
 A modal component flexible and customizable with great smoothness transition.
 
 ## Description
@@ -54,11 +53,9 @@ Follow right below availables properties of component:
 - alertMode - (**Boolean**) When set to true, the modal becomes an alert with only confirmText visible.
 
 ## Todos
----
 - [ ] Unit Tests
 - [ ] Make the whole component modular
 
 
 ## License
----
 MIT. The license for commercial use or personal is forever free.
