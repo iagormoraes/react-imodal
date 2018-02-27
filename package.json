@@ -18,7 +18,9 @@
     "test:coverage": "nwb test-react --coverage",
     "test:watch": "nwb test-react --server"
   },
-  "dependencies": {},
+  "dependencies": {
+    "prop-types": "^15.6.1"
+  },
   "peerDependencies": {
     "react": "16.x"
   },
@@ -27,11 +29,16 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
-  "author": "",
-  "homepage": "",
+  "author": "iagor moraes",
+  "homepage": "https://github.com/iagorm",
   "license": "MIT",
-  "repository": "",
+  "repository": "https://github.com/iagorm",
   "keywords": [
-    "react-component"
+    "react-component",
+    "modal",
+    "modular",
+    "react",
+    "component",
+    "plug-and-play"
   ]
 }

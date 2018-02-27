@@ -5,10 +5,12 @@ import Example from '../../src'
 
 class Demo extends Component {
   render() {
-    return <div>
-      <h1>react-imodal Demo</h1>
-      <Example/>
-    </div>
+    return( 
+      <div>
+        <h1>react-imodal Demo</h1>
+        <Example/>
+      </div>
+    )
   }
 }
 
