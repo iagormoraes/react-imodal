@@ -4,15 +4,11 @@ import PropTypes from 'prop-types';
 import './IModal.css'
 
 export default class IModal extends Component {
-    confirmButton (onConfirm) {
-        this.closeModal(onConfirm)
-    } 
+    confirmButton = (onConfirm) => this.closeModal(onConfirm)
         
-    declineButton (onDecline) {
-        this.closeModal(onDecline)
-    } 
+    declineButton = (onDecline) => this.closeModal(onDecline)
 
-    closeModal (actionBtn) {
+    closeModal = (actionBtn) => {
         const modalNode = this.modal //dom node .app-modal
 
         modalNode.classList.remove('active')
@@ -27,7 +23,7 @@ export default class IModal extends Component {
         }, 200)
     }
 
-    overlayClick (e) {
+    overlayClick = (e) => {
         e.stopPropagation()
         
         if(!e.target.classList.contains('app-modal-overlay')) return
@@ -35,7 +31,7 @@ export default class IModal extends Component {
         this.declineButton(this.props.onDecline)
     }
 
-    draggable (parent) {
+    draggable = (parent) => {
         const parentNode = parent.childNodes[0] // .app-modal
         const modal = parent.childNodes[0].childNodes[0] // .app-modal-body
         const modalHeader = parent.childNodes[0].childNodes[0].childNodes[0] // .app-modal-header
@@ -71,7 +67,8 @@ export default class IModal extends Component {
             <div className="app-modal" ref={modal => {
                 if(modal == null) return
 
-                modal.classList.add('active')
+                // add class with smoothness
+                setTimeout(() => modal.classList.add('active'), 0)
 
                 // enable this feature only on desktop
                 window.innerWidth > 1023 && this.draggable(modal)
@@ -108,7 +105,7 @@ IModal.propTypes = {
 
 IModal.defaultProps  = {
     title: 'Title',
-    content: <br/>,
+    content: <p>Default content</p>,
     confirmText: 'Confirm',
     declineText: 'Cancel',
     alertMode: false,
