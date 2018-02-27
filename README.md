@@ -24,14 +24,16 @@ $ yarn add react-imodal
         }
         render() {
             return(
-                <button onClick={() => this.setState({open: true})}>open modal</button>
-                
-                <IModal
-                    open{this.state.open}
-                    onClose={() => this.setState({open: false})}
-                    title={'Title Name'}
-                    content={'Content Text'}
-                />
+                <div>
+                    <button onClick={() => this.setState({open: true})}>open modal</button>
+                    
+                    <IModal
+                        open{this.state.open}
+                        onClose={() => this.setState({open: false})}
+                        title={'Title Name'}
+                        content={'Content Text'}
+                    />
+                </div>                
             )
         }
     }
