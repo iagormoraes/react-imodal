@@ -19,7 +19,8 @@ class Demo extends Component {
       <div>
         <h1 onClick={() => this.setState({open: true})}>react-imodal Demo</h1>
         <Example/>
-        <IModal open={this.state.open} onClose={() => this.setState({open: false})}/>
+
+        <IModal desktopDraggable={true} className={"mymodal"} open={this.state.open} onClose={() => this.setState({open: false})}/>
       </div>
     )
   }

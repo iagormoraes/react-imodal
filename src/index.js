@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 import './IModal.css'
 
 export default class IModal extends Component {
-    confirmButton = (onConfirm) => this.closeModal(onConfirm)
+    confirmButton = onConfirm => this.closeModal(onConfirm)
         
-    declineButton = (onDecline) => this.closeModal(onDecline)
+    declineButton = onDecline => this.closeModal(onDecline)
 
-    closeModal = (actionBtn) => {
+    closeModal = actionBtn => {
         const modalNode = this.modal //dom node .app-modal
 
         modalNode.classList.remove('active')
@@ -23,15 +23,13 @@ export default class IModal extends Component {
         }, 200)
     }
 
-    overlayClick = (e) => {
-        e.stopPropagation()
-        
+    overlayClick = e => {      
         if(!e.target.classList.contains('app-modal-overlay')) return
 
         this.declineButton(this.props.onDecline)
     }
 
-    draggable = (parent) => {
+    draggable = parent => {
         const parentNode = parent.childNodes[0] // .app-modal
         const modal = parent.childNodes[0].childNodes[0] // .app-modal-body
         const modalHeader = parent.childNodes[0].childNodes[0].childNodes[0] // .app-modal-header
@@ -41,7 +39,7 @@ export default class IModal extends Component {
             document.removeEventListener ("mouseup" , mouseUp);
         } 
 
-        const positions = (ev) => {
+        const positions = ev => {
             const pX = ev.x - parentNode.offsetWidth / 2;
             // position of modal's header
             const pY = (ev.y - parentNode.offsetHeight / 2) + (modalHeader.offsetHeight * 2);
@@ -59,57 +57,64 @@ export default class IModal extends Component {
     }
 
     render() {
-        const {title, content, confirmText, declineText, onConfirm, onDecline, open, alertMode} = this.props
+        const {className, desktopDraggable, title, content, confirmText, declineText, onConfirm, onDecline, open, alertMode} = this.props
         
         if(!open) return null
 
         return (
-            <div className="app-modal" ref={modal => {
-                if(modal == null) return
+            <div className={`app-modal ${className}`} ref={modal => {
+                const { desktopDraggable } = this.props
+
+                if(modal === null) return
 
                 // add class with smoothness
                 setTimeout(() => modal.classList.add('active'), 0)
 
                 // enable this feature only on desktop
-                window.innerWidth > 1023 && this.draggable(modal)
+                window.innerWidth > 1023 && desktopDraggable && this.draggable(modal)
 
                 return this.modal = modal
             }}>
                 <div className="app-modal-overlay" onClick={this.overlayClick}>
                     <div className="app-modal-body">
-                        <div className="app-modal-header">{title}</div>
+                        <div className="app-modal-header" style={{cursor: !desktopDraggable && 'default'}}>{title}</div>
                         <div className="app-modal-content">{content}</div>
                         <div className="app-modal-footer">
                             <div className="button confirm" onClick={() => this.confirmButton(onConfirm)}>{confirmText}</div>
 
-                            {!alertMode && <div className="button cancel" onClick={() => this.declineButton(onDecline)}>{declineText}</div>}
+                            {!alertMode && 
+                                <div className="button cancel" onClick={() => this.declineButton(onDecline)}>{declineText}</div>}
                         </div>
                     </div>
                 </div>
             </div>
-        );
+        )
     }
 }
 
 IModal.propTypes = {
-    open: PropTypes.bool,
+    content: PropTypes.node.isRequired,
     onClose: PropTypes.func,
     onConfirm: PropTypes.func,
     onDecline: PropTypes.func,
     title: PropTypes.string.isRequired,
-    content: PropTypes.node.isRequired,
+    className: PropTypes.string,
     confirmText: PropTypes.string,
     declineText: PropTypes.string,
+    desktopDraggable: PropTypes.bool,
+    open: PropTypes.bool,
     alertMode: PropTypes.bool
 }
 
 IModal.defaultProps  = {
-    title: 'Title',
     content: <p>Default content</p>,
-    confirmText: 'Confirm',
-    declineText: 'Cancel',
-    alertMode: false,
+    onClose: function() {},
     onConfirm: function() {},
     onDecline: function() {},
-    onClose: function() {}
+    title: 'Title',
+    className: '',
+    confirmText: 'Confirm',
+    declineText: 'Cancel',
+    desktopDraggable: true,
+    alertMode: false
 }

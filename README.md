@@ -1,5 +1,5 @@
 # react-imodal 💬  
-[![npm](https://img.shields.io/badge/download-5.97kb-green.svg)](https://www.npmjs.com/package/react-imodal) [![npm](https://img.shields.io/badge/npm-v1.0.8-blue.svg)](https://www.npmjs.com/package/react-imodal) [![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)](https://github.com/iagorm/react-imodal/blob/master/LICENSE)
+[![npm](https://img.shields.io/badge/npm-v1.1.0-blue.svg)](https://www.npmjs.com/package/react-imodal) [![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)](https://github.com/iagorm/react-imodal/blob/master/LICENSE) [![npm](https://img.shields.io/badge/download-5.97kb-green.svg)](https://www.npmjs.com/package/react-imodal)
 
 A modal component flexible and customizable with great smoothness transition.
 
@@ -41,20 +41,47 @@ See an example of component usage:
         }
     }
 ```
+
+## Override CSS
+The style can be override by aplying the correct selectors direct to, folowing the pattern written on the component's stylesheet below:
+```CSS
+/* modal css override example given className of 'mymodal' */
+.mymodal > .app-modal-overlay {
+    background-color: rgba(255,0,0,.2);
+}
+
+.mymodal.active > .app-modal-overlay {
+    opacity: 1;
+}
+
+.mymodal.active > .app-modal-overlay > .app-modal-body {
+    transform: scale(1);  
+}
+
+.mymodal.leaving > .app-modal-overlay {
+    opacity: 0;
+}
+
+.mymodal.leaving > .app-modal-overlay > .app-modal-body {
+    transform: translateY(-40%);  
+}
+```
 ## Draggable Modal
-By default the draggable modal works only on desktop screens size, it will be changed in nexts commits.
+The draggable modal feature works only on desktop screens size and his feature is by default as **true**.
 
 
 ## Props Available
 Follow right below availables properties of component: 
-- open - (**Boolean**) Set the existence of modal component, if it should appear or not.
+- content - (**Node**) The content type can be either HTML, Numbers or Strings.
 - onClose - (**Callback**) Load a callback when close action is made with the modal.
 - onConfirm - (**Callback**) Triggers when users click on the confirm button.
 - onDecline - (**Callback**) Triggers when users click on the decline button.
 - title - (**String**) The type of the value of header's modal is a String.
-- content - (**Node**) The content type can be either HTML, Numbers or Strings.
+- className - (**String**) The classname given to the modal to be customized.
 - confirmText - (**String**) The confirm text must Receive String.
 - declineText - (**String**) The decline text must Receive String.
+- desktopDraggable - (**Boolean**) When set to true, the modal itself becomes draggable throught the viewport.
+- open - (**Boolean**) Set the existence of modal component, if it should appear or not.
 - alertMode - (**Boolean**) When set to true, the modal becomes an alert with only confirmText visible.
 
 ## Todos

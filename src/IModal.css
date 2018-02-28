@@ -48,7 +48,6 @@
     transition: transform .2s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-
 .app-modal.active > .app-modal-overlay {
     opacity: 1;
 }
