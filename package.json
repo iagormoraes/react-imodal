@@ -1,7 +1,7 @@
 {
   "name": "react-imodal",
-  "version": "1.0.3",
-  "description": "react-imodal React component",
+  "version": "1.0.6",
+  "description": "React modal component built with easy usage purpose and UI/UX behaviors.",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
@@ -32,7 +32,7 @@
   "author": "iagor moraes",
   "homepage": "https://github.com/iagorm",
   "license": "MIT",
-  "repository": "https://github.com/iagorm",
+  "repository": "https://github.com/iagorm/react-imodal",
   "keywords": [
     "react-component",
     "modal",

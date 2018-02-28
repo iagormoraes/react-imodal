@@ -13,6 +13,7 @@ $ yarn add react-imodal
 ```
 
 ## Simple Usage Example
+See an example of component usage:
 ```JS
     class Component extends React.Component {
         constructor() {
@@ -55,9 +56,10 @@ Follow right below availables properties of component:
 - alertMode - (**Boolean**) When set to true, the modal becomes an alert with only confirmText visible.
 
 ## Todos
+Here we need you:
 - [ ] Unit Tests
 - [ ] Make the whole component modular
 
 
 ## License
-MIT. The license for commercial use or personal is forever free.
+MIT. The [license](https://github.com/iagorm/react-imodal/blob/master/LICENSE) for commercial use or personal is forever free.
