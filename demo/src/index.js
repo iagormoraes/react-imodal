@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {render} from 'react-dom'
 
+import './style.css'
 import Example from '../../src'
 
 import IModal from '../../src/index'
@@ -16,8 +17,18 @@ class Demo extends Component {
 
   render() {
     return( 
-      <div>
-        <h1 onClick={() => this.setState({open: true})}>react-imodal Demo</h1>
+      <div className="container">
+        
+        <a href="https://github.com/iagorm/react-imodal">
+          <img style={{position: 'absolute', top: 0, right: 0, border: 0}} src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
+        </a>
+
+        <h1>react-imodal Component</h1>
+        <h2>by Iagor Moraes</h2>
+        <a href="https://www.npmjs.com/package/react-imodal"><img src="https://img.shields.io/badge/npm-v1.1.0-blue.svg"/></a><br/>
+        <button onClick={() => this.setState({open: true})}>Click to open Modal</button>
+        <a href="https://github.com/iagorm/react-imodal" style={{marginTop: 15, color: 'white'}}>Read the documentation</a>
+
         <Example/>
 
         <IModal desktopDraggable={true} className={"mymodal"} open={this.state.open} onClose={() => this.setState({open: false})}/>
