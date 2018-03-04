@@ -26,7 +26,7 @@ export default class IModal extends Component {
     overlayClick = e => {      
         if(!e.target.classList.contains('app-modal-overlay')) return
 
-        this.declineButton(this.props.onDecline)
+        this.declineButton(this.props.onDecline) 
     }
 
     draggable = parent => {
