@@ -40,7 +40,16 @@ test('Component have default properties', () => {
 })
 
 test('Component mount with custom props values', () => {
-  const component = mount(<Component title="Custom Title" className="custom-modal" content={<p>custom text</p>} confirmText="CustomConfirm" declineText="CustomDecline" desktopDraggable={false}/>)  
+  const component = mount(
+    <Component 
+      title="Custom Title" 
+      className="custom-modal" 
+      content={<p>custom text</p>} 
+      confirmText="CustomConfirm" 
+      declineText="CustomDecline" 
+      desktopDraggable={false}
+    />
+  )
 
   expect(component.props()["title"]).toBe('Custom Title')
   expect(component.props()["className"]).toBe('custom-modal')

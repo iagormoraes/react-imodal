@@ -50,7 +50,7 @@ export default class IModal extends Component {
             document.addEventListener('mouseup', mouseUp)
         }
 
-        // when mouse down over the header of 400ms...
+        // when drag mouse over the header...
         modalHeader.addEventListener('mousedown', e => {
             document.addEventListener('mousemove', positions)
         })

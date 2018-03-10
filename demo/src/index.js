@@ -25,9 +25,13 @@ class Demo extends Component {
 
         <h1>react-imodal Component</h1>
         <h2>by Iagor Moraes</h2>
-        <a href="https://www.npmjs.com/package/react-imodal"><img src="https://img.shields.io/badge/npm-v1.1.4-blue.svg"/></a><br/>
+        
+        <a href="https://www.npmjs.com/package/react-imodal"><img src="https://img.shields.io/badge/npm-v1.1.6-blue.svg"/></a><br/>
+        
         <button onClick={() => this.setState({open: true})}>Click to open Modal</button>
+        
         <a href="https://github.com/iagorm/react-imodal" style={{marginTop: 15, color: 'white'}}>Read the documentation</a>
+        <a style={{marginTop: 10}} href="https://twitter.com/intent/tweet?text=Get react-imodal today, a easy modal component built in React plug-n-play: https://github.com/iagorm/react-imodal" target="_blank"><img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter"/></a>
 
         <Example/>
 

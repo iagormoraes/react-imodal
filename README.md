@@ -86,7 +86,7 @@ Follow right below availables properties of component:
 
 ## Todos
 Here we need you:
-- [ ] Unit Tests
+- [-] Unit Tests
 - [ ] Make the whole component modular
 
 
