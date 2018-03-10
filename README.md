@@ -1,5 +1,5 @@
 # react-imodal 💬  
-[![npm](https://img.shields.io/badge/npm-v1.1.2-blue.svg)](https://www.npmjs.com/package/react-imodal) [![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)](https://github.com/iagorm/react-imodal/blob/master/LICENSE) [![npm](https://img.shields.io/badge/download-37kb-green.svg)](https://www.npmjs.com/package/react-imodal)
+[![npm](https://img.shields.io/badge/npm-v1.1.7-blue.svg)](https://www.npmjs.com/package/react-imodal) [![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)](https://github.com/iagorm/react-imodal/blob/master/LICENSE) [![npm](https://img.shields.io/badge/download-37kb-green.svg)](https://www.npmjs.com/package/react-imodal)
 
 A modal component flexible and customizable with great smoothness transition.
 
@@ -85,7 +85,7 @@ Follow right below availables properties of component:
 - alertMode - (**Boolean**) When set to true, the modal becomes an alert with only confirmText visible.
 
 ## Todos
-Here we need you:
+We need you:
 - [-] Unit Tests
 - [ ] Make the whole component modular
 
