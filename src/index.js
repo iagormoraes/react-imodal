@@ -41,8 +41,9 @@ export default class IModal extends Component {
 
         const positions = ev => {
             const pX = ev.x - parentNode.offsetWidth / 2;
-            // position of modal's header
-            const pY = (ev.y - parentNode.offsetHeight / 2) + (modalHeader.offsetHeight * 2);
+            // position Y of  half of .app-modal, half of .app-modal-body and half of .app-modal-header
+            // to achieve the half of header center move positions
+            const pY = (ev.y - parentNode.offsetHeight / 2) + ((modal.offsetHeight / 2) - (modalHeader.offsetHeight / 2));
 
             modal.style.left = (pX) + "px";
             modal.style.top = (pY) + "px";
