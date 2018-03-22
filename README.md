@@ -1,5 +1,5 @@
 # react-imodal 💬  
-[![npm](https://img.shields.io/badge/npm-v1.2.0-blue.svg)](https://www.npmjs.com/package/react-imodal) [![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)](https://github.com/iagorm/react-imodal/blob/master/LICENSE) [![npm](https://img.shields.io/badge/download-1.84kb-green.svg)](https://www.npmjs.com/package/react-imodal)
+[![npm](https://img.shields.io/badge/npm-v1.2.2-blue.svg)](https://www.npmjs.com/package/react-imodal) [![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)](https://github.com/iagorm/react-imodal/blob/master/LICENSE) [![npm](https://img.shields.io/badge/gzip-1.84kb-green.svg)](https://www.npmjs.com/package/react-imodal)
 
 A modal component flexible and customizable with great smoothness transition.
 
