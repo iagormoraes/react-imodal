@@ -16,7 +16,7 @@ $ yarn add react-imodal
 
 ## Simple Usage Example
 See an example of component usage:
-```JS
+```jsx
     class Component extends React.Component {
         constructor() {
             super()
